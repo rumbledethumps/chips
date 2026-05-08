@@ -119,13 +119,13 @@ void ui_display_discard(ui_display_t* win) {
 
 static ui_display_quad_t ui_display_uv_quad(bool origin_top_left, bool portrait) {
     ui_display_quad_t res = {};
-    res.v[0] = { 0, 0 };
-    res.v[1] = { 1, 0 };
-    res.v[2] = { 1, 1 };
-    res.v[3] = { 0, 1 };
+    res.v[0] = { 0, 1 };
+    res.v[1] = { 1, 1 };
+    res.v[2] = { 1, 0 };
+    res.v[3] = { 0, 0 };
     if (origin_top_left) {
-        res.v[0].y = res.v[1].y = 1;
-        res.v[2].y = res.v[3].y = 0;
+        res.v[0].y = res.v[1].y = 0;
+        res.v[2].y = res.v[3].y = 1;
     }
     if (portrait) {
         ImVec2 v3 = res.v[3];
